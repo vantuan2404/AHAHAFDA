@@ -1,0 +1,730 @@
+.blogdetailpage{
+    .banner{
+        background: url(./../img/inventory/banner.jpg);
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        .caption{
+            @include mid();
+            text-align: center;
+            h1{
+                @include text($fs-main,'Mon-B',85px,$white-cl,none);
+            }
+            p{
+                @include text(20px,'Mon-R',85px,$white-cl,none);
+                    font-weight: 700;
+                a{
+                    @include text(20px,'Mon-R',25px,$white-cl,none);
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: inline-block;
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 2px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        display: block;
+                        background-color: $white-cl;
+                        transition: width 0.6s;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            transition: width 0.6s;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    .container{
+        .main{
+            margin-top: 125px;
+            margin-bottom: 100px;
+            &_row{
+                &-article{
+                    padding-right: 15px;
+                    .img{
+                        img{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                    .des{
+                        margin-top: 40px;
+                        &_info{
+                            &-people, &-calendar, &-cmt{
+                                display: inline-flex;
+                                align-items: center;
+                                margin-right: 20px;
+                                p{
+                                    @include text($fs-p,'Mon-R',31px,$grey-cl,none);
+                                    padding-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                    .caption{
+                        margin-top: 5px;
+                        margin-bottom: 80px;
+                        h2{
+                            @include text(35px,'Mon-B',45px,$black-cl,none);
+                            padding-bottom: 20px;
+                        }
+                        p{
+                            padding-top: 15px;
+                            @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                        }
+                    }
+                    .jumbotron{
+                        background: $blue-cl;
+                        margin-bottom: 60px;
+                        &-d{
+                            padding: 50px 65px;
+                            p, h6{
+                                @include text($fs-16,'Mon-B',31px,$white-cl,none);
+                            
+                            }
+                            h6{
+                                padding-top: 10px;
+                                span{
+                                    content: "";
+                                    width: 35px;
+                                    height: 2px;
+                                    position: relative;
+                                    top: -5px;
+                                    background-color: $white-cl;
+                                    margin-right: 10px;
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                    .usecar{
+                        margin-bottom: 80px;
+                        &_row{
+                            &-img{
+                                padding-right: 15px;
+                                .img{
+                                    overflow: hidden;
+                                    img{
+                                        width: 100%;
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                            &-des{
+                                padding-left: 15px;
+                                h4{
+                                    padding: 10px 0 15px 0;
+                                    @include text(28px,'Mon-B',30px,$black-cl,none);
+                                }
+                                p{
+                                    @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                }
+                                
+                            }
+                            .tag{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin-top: 40px;
+                                &-small{
+                                    h6{
+                                        @include text(18px,'Mon-B',28px,$black-cl,none);
+                                        p{
+                                            display: inline-block;
+                                            @include text($fs-16,'Mon-R',28px,$grey-cl,none);
+                                        }
+                                    }
+                                }
+                                .share{
+                                    display: flex;
+                                    align-items: center;
+                                    float: right;
+                                    p{
+                                        @include text(18px,'Mon-B',28px,$black-cl,none);
+                                    }
+                                    img{
+                                        padding-left: 20px;
+                                        cursor: pointer;
+                                        transition: transform .4s;
+                                        &:hover{
+                                            background: $blue-cl;
+                                            transition: all .4s;
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+                    .comments{
+                        &_main{
+                            background: #1f2441;
+                            margin-bottom: 60px;
+                            &-d{
+                                display: flex;
+                                align-items: center;
+                                padding: 50px 70px;
+                                .img{
+                                    border-radius: 50%;
+                                    padding-right: 20px;
+                                    img{
+                                        max-width: 100%;
+                                    }
+                                }
+                                .des{
+                                    h5{
+                                        @include text(20px,'Mon-B',28px,$white-cl,none);
+                                    }
+                                    p{
+                                        padding-top: 10px;
+                                        @include text($fs-p,'Mon-R',28px,$white-cl,none);
+                                    }
+                                }
+                                .share{
+                                    padding-top: 15px;
+                                    img{
+                                        transition: all .4s;
+                                        cursor: pointer;
+                                        padding-right: 20px;
+                                        &:hover{
+                                            background: $blue-cl;
+                                            transition: all .4s;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &_small{
+                            .title{
+                                @include text(30px,'Mon-B',30px,$black-cl,none);
+                                padding-top:10px;
+                            }
+                            &-d{
+                                display: flex;
+                                align-items: center;
+                                .img-small{
+                                    padding-right: 15px;
+                                    img{
+                                        width: 220px;
+                                        height: 80px;
+                                        max-width: 100%;
+                                    }
+                                }
+                                .des{
+                                    padding-left: 15px;
+                                    h6{
+                                        @include text(18px,'Mon-B',30px,$black-cl,none);
+                                    }
+                                    p{
+                                        @include text($fs-small,'Mon-R',30px,$blue-cl,none);
+                                    }
+                                    .spc{
+                                        color: $grey-cl;
+                                    }
+                                    .btn{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        cursor: pointer;
+                                        p{
+                                            position: relative;
+                                            left: 0;
+                                            @include text($fs-p,'Mon-B',30px,$black-cl,none);
+                                            transition: left .4s;
+                                        }
+                                        img{
+                                            padding-left: 10px;
+                                            transition: transform .4s;
+                                        }
+                                        &:hover{
+                                            img{
+                                                transform: translateX(-120px);
+                                                transition: transform .4s;
+                                            }
+                                            p{
+                                                left: 40px;
+                                                transition: left .4s;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                            .d-2{
+                                padding-left: 9%;
+                            }
+                        }
+                    }
+                    .line{
+                        content: "";
+                        width: 100%;
+                        height: 1px;
+                        background-color: #ececec;
+                        display: block;
+                        margin: 80px 0;
+                    }
+                    .reply{
+                        width: 100%;
+                        &_row{
+                            p{
+                                @include text(30px,'Mon-B',30px,$black-cl,none);
+                                padding-bottom: 20px;
+                            }
+                            &-col{
+                                padding-top: 20px;
+                                width: 100%;
+                                .row-1{
+                                    margin-bottom: 30px;
+                                    .col-left, .col-right{
+                                        padding: 0 15px;
+                                        .form-name, .form-email, .form-phone{
+                                            width: 100%;
+                                            position: relative;
+                                            input{
+                                                width: 100%;
+                                                height: 70px;
+                                                border-radius: 5px;
+                                                border: 1px solid #e1dddd;
+                                                transition: border 0.4s;
+                                            }           
+                                            img{
+                                                position: absolute;
+                                                right: 0;
+                                                padding: 25px 25px 0 0;
+                                            }
+                                        }
+                                        .col-right-d{
+                                            width: 100%;
+                                            height: 70px;
+                                            border-radius: 5px;
+                                            border: 1px solid #e1dddd;
+                                            transition: border 0.4s;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            cursor: pointer;
+                                            position: relative;
+                                            p{
+                                                padding-left: 10px;
+                                                @include text($fs-p,'Mon-R',35px,$grey-cl,none);
+                                                font-weight: 600;
+                                            }
+                                            img{
+                                                position: relative;
+                                                margin-right: 25px;
+                                                transition: transform .4s;
+                                            }
+                                            .quay{
+                                                transform: rotate(180deg);
+                                                transition: transform .4s;
+                                            }
+                                            .ul_list{
+                                                width: 100%;
+                                                position: absolute;
+                                                background: $white-cl;
+                                                top: 69px;
+                                                display: none;
+                                                z-index: 120;
+                                                border-radius: 5px;
+                                                -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                                -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                                box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                                li{
+                                                    width: 100%;
+                                                    border-bottom: 1px solid #e1dddd;
+                                                    cursor: pointer;
+                                                    p{
+                                                        padding: 16px 0 16px 10px;
+                                                        @include text($fs-p,'Mon-R',35px,$grey-cl,none);
+                                                        font-weight: 600;
+                                                    }
+                                                    &:hover{
+                                                        background: #e1dddd;
+                                                    }
+                                                }
+                                            }
+                                            .show{
+                                                display: block;
+                
+                                            }
+                                        }
+                                    }
+                                }
+                                .row2{
+                                    padding: 0 15px;
+                                    .col-text{
+                                        &-d{
+                                            position: relative;
+                                            textarea{
+                                                width: 100%;
+                                                height: 120px;
+                                                border-radius: 5px;
+                                                border: 1.5px solid #e1dddd;
+                                                resize: none;
+                                            }
+                                            img{
+                                                position: absolute;
+                                                padding: 25px 25px 0 0;
+                                                right: 0;
+                                                top: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                .row3{
+                                    margin-top: 30px;
+                                    .col_btn{
+                                        padding: 0 15px;
+                                        .btn{
+                                            display: inline-block;
+                                            border-radius: 5px;
+                                            background: $blue-cl;
+                                            &-d{
+                                                display: inline-flex;
+                                                align-items: center;
+                                                padding: 10px 32px;
+                                                cursor: pointer;
+                                                p{
+                                                    padding-bottom: 0;
+                                                    @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                                    padding-right: 5px;
+                                                }
+                                                img{
+                                                   transition: transform .4s;
+                                                }
+                                                &:hover{
+                                                    img{
+                                                        transform: translateX(10px);
+                                                        transition: transform .4s;
+                                                    }
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &-aside{
+                    padding-left: 15px;
+                    .search{
+                        margin-bottom: 40px;
+                        background: $blue-cl;
+                        &-d{
+                            padding:40px;
+                            p{
+                                @include text(24px,'Mon-B',30px,$white-cl,none);
+                            }
+                            span{
+                                content: "";
+                                width: 35px;
+                                height: 2px;
+                                background-color: $white-cl;
+                                display: block;
+                                margin: 10px 0;
+                            }
+                            .input{
+                                background: #58aeff;
+                                &-d{
+                                    padding: 20px;
+                                    input{
+                                        border: none;
+                                        outline: none;
+                                        background: transparent;
+                                        color: $white-cl;
+                                        font-weight: 600;
+                                    }
+                                    img{
+                                        float: right;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .recent{
+                        margin-bottom: 40px;
+                        background: #f5faff;
+                        &_d{
+                            padding: 40px;
+                            p{
+                                @include text(24px,'Mon-B',30px,$black-cl,none);
+                            }
+                            span{
+                                width: 35px;
+                                height: 2px;
+                                border-radius: 10px;
+                                background: $blue-cl;
+                                display: block;
+                                margin: 10px 0;
+                            }
+                            .line{
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background-color: #e1dddd;
+                                display: block;
+                                margin: 30px 0;
+                            }
+                            &-item{
+                                display: flex;
+                                align-items: center;
+                                img{
+                                    padding-right: 10px;
+                                }
+                                .text{
+                                    padding-left: 10px;
+                                    h6{
+                                        @include text(18px,'Mon-B',30px,$black-cl,none);
+                                    }
+                                    .btn{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        cursor: pointer;
+                                        p{
+                                            @include text($fs-p,'Mon-B',30px,$grey-cl,none);
+                                            padding-right: 5px;
+                                        }
+                                        img{
+                                            transition: transform .4s;
+                                        }
+                                        &:hover{
+                                            img{
+                                                transform: translateX(10px);
+                                                transition: transform .4s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    .caterogy{
+                        background: #f5faff;
+                        margin-bottom: 40px;
+                        &_d{
+                            padding: 40px;
+                            p{
+                                @include text(24px,'Mon-B',30px,$black-cl,none);
+                            }
+                            span{
+                                width: 35px;
+                                height: 2px;
+                                border-radius: 10px;
+                                background: $blue-cl;
+                                display: block;
+                                margin: 10px 0;
+                            }
+                            &-btn{
+                                a{
+                                    display: inline-flex;
+                                    align-items: center;
+                                    img{
+                                        left: 0;
+                                        transform: rotate(180deg);
+                                        position: relative;
+                                        transition: left .4s;
+                                    }
+                                    p{
+                                        left: 0;
+                                        padding-left: 5px;
+                                        @include text($fs-p,'Mon-R',30px,$blue-cl,none);
+                                        position: relative;
+                                        transition: left .4s;
+                                    }
+                                    &:hover{
+                                        p{
+                                            left: -22px;
+                                            transition: left .4s;
+                                        }
+                                        img{
+                                           left: 80px;
+                                            transition: left .4s;
+                                        }
+                                    }
+                                }
+                            }
+                            &-des{
+                                p{
+                                    @include text($fs-p,'Mon-R',35px,$grey-cl,none); 
+                                }
+                            }
+                        }
+                    }
+                    .popular{
+                        margin-bottom: 40px;
+                        background: #f5faff;
+                        &_d{
+                            padding: 40px;
+                            p{
+                                @include text(24px,'Mon-B',30px,$black-cl,none);
+                            }
+                            span{
+                                width: 35px;
+                                height: 2px;
+                                border-radius: 10px;
+                                background: $blue-cl;
+                                display: block;
+                                margin: 10px 0;
+                            }
+                            &-item{
+                                .btn_p{
+                                    background: $white-cl;
+                                    display: inline-block;
+                                    transition: all .6s;
+                                    margin: 10px;
+                                    &-d{
+                                        padding: 25px;
+                                        cursor: pointer;
+                                        a{
+                                            @include text($fs-p,'Mon-R',26px,$grey-cl,none);
+                                        }
+                                    }
+                                    &:hover{
+                                        background: $blue-cl;
+                                        transition: all .6s;
+                                        .btn_p-d{
+                                            a{
+                                                color: $white-cl;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .sale{
+                        position: relative;
+                        img{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                        &-text{
+                            background: $white-cl;
+                            position: absolute;
+                            @include mid();
+                            h6{
+                                padding: 30px 70px;
+                                @include text(30px,'Mon-B',35px,$black-cl,none);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include desktop{
+    .blogdetailpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .blogdetailpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+    }
+}
+@include mobile{
+    .blogdetailpage{
+        .banner{
+            margin-top: 0;
+            .caption{
+                top: 40%;
+                h1{
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+        }
+        .container{
+            padding: 0 5px;
+            .main_row-article{
+                padding: 0;
+                .usecar_row{
+                    .tag{
+                        flex-direction: column;
+                        .share{
+                            margin-top: 10px;
+                        }
+                    }
+                }
+                .jumbotron{
+                    &-d{
+                        padding: 20px;
+                    }
+                }
+                .comments{
+                    &_main{
+                        &-d{
+                            flex-direction: column;
+                            padding: 20px 30px;
+                        }
+                    }
+                    &_small{
+                        
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        &-d{
+                            flex-direction: column;
+                            margin-top: 30px;
+                            .img-small{
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .reply{
+                    &_row{
+                        &-col{
+                            .row-1, .row-2{
+                                .col-left, .col-right{
+                                    padding: 0;
+                                    
+                                }
+                                .col-left{
+                                    .form-name{
+                                        margin-bottom: 30px;
+                                    }
+                                }
+                            }
+                            .row2{
+                                padding: 0;
+                            }
+
+                           
+                        }
+                    }
+                }
+            }
+            .main_row-aside{
+                margin-top: 50px;
+                padding: 0;
+                .popular, .recent, .search, .caterogy{
+                    &_d, &-d{
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+        
+    }
+}

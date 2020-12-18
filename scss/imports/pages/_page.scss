@@ -1,0 +1,89 @@
+.pagespage{
+    max-width: 100%;
+    .banner{
+        margin-top:90px;
+        height: 950px;
+        img{
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+        .container{
+            padding: 0 5px;
+            margin: auto; 
+            position: relative;
+            top: -13%;      
+            .backHome{
+                @include mid();
+                h4{
+                    @include text(30px,'Mon-B',28px,$black-cl,none);
+                }
+                .btn-back{
+                    display: inline-block;
+                    background: $blue-cl;
+                    border-radius: 5px;
+                    position: relative;
+                    left: 27%;
+                    margin-top: 30px;
+                    a{
+                        padding: 16px 40px;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 14px;
+                            height: 9px;
+                            position: relative;
+                            transition: transform 0.4s;
+                        }
+                        p{
+                            @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                            padding-right:5px;
+                        }
+                    }
+                    &:hover{
+                        a{
+                            img{
+                                transform: translateX(10px);
+                                transition: transform 0.4s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .pagespage{
+        margin-bottom: 100px;
+        .banner{
+            margin-top: 0;
+            height: 500px;
+            img{
+                height: 500px;
+                margin-top: 65px;
+            }
+            .container{
+                top: -50%;
+                
+                .backHome{
+                    h4{
+                        font-size: 45px;
+                        line-height: 60px;
+                    }
+                    .btn-back{
+                        left: 0%;
+                        a{
+                            padding: 10px 20px;
+                            img{
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+}

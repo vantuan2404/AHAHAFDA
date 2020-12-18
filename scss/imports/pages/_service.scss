@@ -1,0 +1,305 @@
+.servicepage{
+    .banner{
+        background: url(./../img/inventory/banner.jpg);
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        .caption{
+            @include mid();
+            text-align: center;
+            h1{
+                @include text($fs-main,'Mon-B',85px,$white-cl,none);
+            }
+            p{
+                @include text(20px,'Mon-R',85px,$white-cl,none);
+                    font-weight: 700;
+                    a{
+                        @include text(20px,'Mon-R',25px,$white-cl,none);
+                        font-weight: 700;
+                        cursor: pointer;
+                        display: inline-block;
+                        &::after{
+                            content: "";
+                            width: 0%;
+                            height: 2px;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            display: block;
+                            background-color: $white-cl;
+                            transition: width 0.6s;
+                        }
+                        &:hover{
+                            &::after{
+                                width: 100%;
+                                transition: width 0.6s;
+                            }
+                        }
+                    }  
+            }
+        }
+    }
+    .container{
+        .service{
+            margin-top: 100px;
+            .row-caption{
+                padding-bottom: 50px;
+                .col-title{
+                    padding: 0 5px;
+                    h2{
+                        @include text($fs-sm,'Mon-B',60px,$black-cl,none);
+                        p{
+                            color: $blue-cl;
+                            font-style: italic;
+                        }
+                    }
+                }
+                .col-des{
+                    padding: 0 5px;
+                    p{
+                        @include text(16px,'Mon-R',32px,$grey-cl,none);
+                    }
+                }
+            }
+            .row_service{
+                &-item{
+                    .card{
+                        position: relative;
+                        padding: 0 5px;
+                        margin-bottom: 60px;
+                        .img{
+                            img{
+                                max-width: 100%;
+                            }
+                        }
+                        .des{
+                            padding:5px 0px 20px 0px;
+                            h3{
+                                @include text(24px,'Mon-B',75px,$black-cl,none);
+                            }
+                            p{
+                                @include text($fs-p,'Mon-R',32px,$grey-cl,none);
+                            }
+                        }
+                        .btn_service{
+                            display: inline-block;
+                            transition: transform 0.4s;
+                            a{
+                                display: flex;
+                                align-items: center;
+                                p{
+                                    @include text($fs-small,'Mon-B',20px,$grey-cl,uppercase);
+                                    padding-right: 5px;
+                                }       
+                                img{
+                                    position: relative;
+                                    transition: transform 0.4s;
+                                }
+                            }
+                            &::after{
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background-color: $grey-cl;
+                                display: block;
+                                position: relative;
+                                transition: transform 0.4s;
+                            }
+                            &:hover{
+                                a{
+                                    img{
+                                        transform: translateX(10px);
+                                        transition: transform 0.4s;
+                                    }
+                                }
+                                &::after{
+                                    transform: translateX(-20px);
+                                    transition: transform 0.4s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .profesinal{
+        margin: 100px 0;
+        width: 100%;
+        height: 578px;
+        background: url(./../img/service/banner-service-2.jpg);
+        .container{
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            .row-caption{
+                height: 100%;
+                position: relative;
+                .col-title{
+                    @include mid();
+                    .caption{
+                        text-align: center;   
+                        h2{
+                            @include text(65px,'Mon-B',70px,$white-cl,none);
+                        }
+                        .btn{
+                            padding-top: 45px;
+                            &-meet{
+                                background: #0066c5;
+                                border-radius: 5px;
+                                display: inline-block;
+                                margin: 0 10px;
+                                a{
+                                    padding: 18px 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    p{
+                                        @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                        padding-right: 5px;
+                                    }
+                                    img{
+                                        position: relative;
+                                        transition: transform 0.4s;
+                                    }
+                                }
+                                &:hover{
+                                    a{
+                                        img{
+                                            transform: translateX(10px);
+                                            transition: transform 0.4s;
+                                        }
+                                    }
+                                }
+                            }
+                            &-reser{
+                                background: #ff9600;
+                                border-radius: 5px;
+                                display: inline-block;
+                                margin: 0 10px;
+                                a{
+                                    padding: 18px 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    p{
+                                        @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                        padding-right: 5px;
+                                    }
+                                    img{
+                                        position: relative;
+                                        transition: transform 0.4s;
+                                    }
+                                }
+                                &:hover{
+                                    a{
+                                        img{
+                                            transform: translateX(10px);
+                                            transition: transform 0.4s;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+@include desktop{
+    .servicepage{
+        .banner{
+            .caption{
+                top: 30%;
+            }
+        }
+    }
+}
+@include tablet{
+    .servicepage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+        .container{
+            .big-aside{
+                .row-2, .row-3{
+                    .specials-d, .caption-d{
+                        p{
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .row-3{
+
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .servicepage{
+        .banner{
+            margin-top: 0;
+            .caption{
+                top: 40%;
+                h1{
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+        }
+        .container{
+            padding: 0 5px;
+            .sell{
+                .row-sell{
+                    .col-aside, .col-article{
+                        padding: 0;
+                    }
+                    .col-article{
+                        .row_tab{
+                            nav{
+                                ul{
+                                    li{
+                                        p{
+                                            padding: 3px 12px;
+                                        }
+                                        img{
+                                            padding: 12px 17px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .row-top{
+                            flex-direction: column;
+                            .col-right{
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .profesinal{
+            .container{
+                .row-caption{
+                    .col-title{
+                        .caption{
+                            h2{
+                                font-size: 38px;
+                                line-height: 46px;
+                            }
+                            .btn{
+                                &-meet, &-reser{
+                                    margin: 10px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,435 @@
+.contactpage{
+    .banner{
+        background: url(./../img/inventory/banner.jpg);
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        .caption{
+            @include mid();
+            text-align: center;
+            h1{
+                @include text($fs-main,'Mon-B',85px,$white-cl,none);
+            }
+            p{
+                @include text(20px,'Mon-R',85px,$white-cl,none);
+                    font-weight: 700;
+                a{
+                    @include text(20px,'Mon-R',25px,$white-cl,none);
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: inline-block;
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 2px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        display: block;
+                        background-color: $white-cl;
+                        transition: width 0.6s;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            transition: width 0.6s;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    .container{
+        .row_info{
+            margin: 100px 0;
+            .col-item{
+                padding: 0 10px;
+                .card{
+                    -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                    -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                    box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                    transition: all .4s;
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    &::after{
+                        content: "";
+                        width: 100%;
+                        height: 0px;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        background-color: $black-cl;
+                        transition: height .6s;
+                        z-index: 5;
+                    }
+                    .line{
+                        content: "";
+                        width: 100%;
+                        height: 6px;
+                        background-color: $blue-cl;
+                        display: block;
+                        transition: transform .6s;
+                        z-index: 6;
+                    }
+                    .orange{
+                        background-color: #ff9600;
+                    }
+                    .pink{
+                        background-color: #ee2a7b;
+                    }
+                    &-d{
+                        padding: 35px;
+                        display: inline-flex;
+                        align-items: center;   
+                        img{
+                            padding-right: 30px;
+                            transition: z-index 1.2s;
+                        }
+                        .des{
+                            transition: z-index 1.2s;
+                            h4{
+                                @include text(24px,'Mon-B',35px,$black-cl,none);
+                                padding-bottom: 15px;
+                                transition: color 1.2s;
+                            }
+                            p{
+                                @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                            }
+                        }
+                    }
+                    &:hover{
+                        &::after{
+                            height: 176px;
+                            transition: height .6s;
+                        }
+                        .line{
+                            transform: translateY(176px);
+                            transition: transform .6s;
+                        }
+                        .card-d{
+                            img{
+                            z-index: 11;
+                            transition: z-index 1.2s;
+                            }
+                            .des{
+                                z-index: 11;
+                                transition: z-index 1.2s;
+                                h4{
+                                    color: $white-cl;
+                                    transition: color 1.2s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .row_main{
+            margin: 100px 0;
+            &-caption{
+                padding: 0 10px;
+                .details{
+                    h3{
+                        @include text(55px,'Mon-B',28px,$black-cl,none);
+                        padding-bottom: 32px;
+                        p{
+                            display: inline-block;
+                            color: $blue-cl;
+                            font-style: italic;
+                        }
+                    }
+                    .spc{
+                        @include text(16px,'Mon-R',28px,$grey-cl,none);
+                    }
+                    .spc2{
+                        padding-bottom: 35px;
+                    }
+                }
+            }
+            &-form{
+                padding: 0 10px;
+                .row-1{
+                    margin-bottom: 30px;
+                    .col-left, .col-right{
+                        padding: 0 15px;
+                        .form-name, .form-email, .form-phone{
+                            width: 100%;
+                            position: relative;
+                            input{
+                                width: 100%;
+                                height: 70px;
+                                border-radius: 5px;
+                                border: 1px solid #e1dddd;
+                                transition: border 0.4s;
+                            }           
+                            img{
+                                position: absolute;
+                                right: 0;
+                                padding: 25px 25px 0 0;
+                            }
+                        }
+                        .col-right-d{
+                            width: 100%;
+                            height: 70px;
+                            border-radius: 5px;
+                            border: 1px solid #e1dddd;
+                            transition: border 0.4s;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            position: relative;
+                            p{
+                                padding-left: 10px;
+                                @include text($fs-p,'Mon-R',35px,$grey-cl,none);
+                                font-weight: 600;
+                            }
+                            img{
+                                position: relative;
+                                margin-right: 25px;
+                                transition: transform .4s;
+                            }
+                            .quay{
+                                transform: rotate(180deg);
+                                transition: transform .4s;
+                            }
+                            .ul_list{
+                                width: 100%;
+                                position: absolute;
+                                background: $white-cl;
+                                top: 69px;
+                                display: none;
+                                z-index: 120;
+                                border-radius: 5px;
+                                -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                li{
+                                    width: 100%;
+                                    border-bottom: 1px solid #e1dddd;
+                                    cursor: pointer;
+                                    p{
+                                        padding: 16px 0 16px 10px;
+                                        @include text($fs-p,'Mon-R',35px,$grey-cl,none);
+                                        font-weight: 600;
+                                    }
+                                    &:hover{
+                                        background: #e1dddd;
+                                    }
+                                }
+                            }
+                            .show{
+                                display: block;
+
+                            }
+                        }
+                    }
+                }
+                .row2{
+                    padding: 0 15px;
+                    .col-text{
+                        &-d{
+                            position: relative;
+                            textarea{
+                                width: 100%;
+                                height: 120px;
+                                border-radius: 5px;
+                                border: 1.5px solid #e1dddd;
+                                resize: none;
+                            }
+                            img{
+                                position: absolute;
+                                padding: 25px 25px 0 0;
+                                right: 0;
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+                .row3{
+                    margin-top: 30px;
+                    .col_btn{
+                        padding: 0 15px;
+                        .btn{
+                            display: inline-block;
+                            border-radius: 5px;
+                            background: $blue-cl;
+                            &-d{
+                                display: inline-flex;
+                                align-items: center;
+                                padding: 10px 32px;
+                                cursor: pointer;
+                                p{
+                                    @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                    padding-right: 5px;
+                                }
+                                img{
+                                   transition: transform .4s;
+                                }
+                                &:hover{
+                                    img{
+                                        transform: translateX(10px);
+                                        transition: transform .4s;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .map{
+            width: 100%;
+            height: 20%;
+            margin-bottom:100px;
+            &-d{
+                margin: 10px;
+                iframe{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.send_modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba($color: #000000, $alpha: .6);
+    z-index: 100;
+    display: none;
+    &-d{
+        width: 40%;
+        height: 60%;
+        @include mid();
+        background: $white-cl;
+        .header-modal{
+            height: 15%;
+            background: $blue-cl;
+            @include midflex();
+            p{
+                @include text($fs-small,'Mon-B',28px,$white-cl,uppercase);
+                letter-spacing: 1px;
+            }
+        }
+        .body-modal{
+            height: 75%;
+            p{
+                padding: 0 10px;
+                @include text($fs-small,'Mon-R',28px,$black-cl,none);
+                font-weight: 600;
+            }
+        }
+        .footer-modal{
+            height: 10%;
+            background: $grey-cl;
+            @include midflex();
+           .btn{
+               background: $blue-cl;
+               display: inline-block;
+               cursor: pointer;
+               transition: opacity .6s;
+                p{
+                    padding: 5px 20px;
+                    @include text(12px,'Mon-B',28px,$white-cl,uppercase);
+                }
+                &:hover{
+                    opacity: .6;
+                    transition: opacity .6s;
+                }
+           }
+        }
+    }
+}
+.show-modal{
+    display: block;
+}
+@include desktop{
+    .contactpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .contactpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+        .container{
+            .row_info{
+                .col-item{
+                    margin-bottom: 30px;
+                }
+            }
+            .row_main{
+                &-caption{
+                    .details{
+                        h3{
+                            line-height: 55px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .contactpage{
+        .banner{
+            margin-top: 0;
+            .caption{
+                top: 40%;
+                h1{
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+        }
+        .container{
+            padding:  0 5px;
+            .row_info{
+                .col-item{
+                    margin-bottom: 30px;
+                }
+            }
+            .row_main{
+                &-caption{
+                    .details{
+                        h3{
+                            line-height: 50px;
+                        }
+                    }
+                }
+                &-form{
+                    margin-top: 50px;
+                    .row-1{
+                        .col-left, .col-right, .col-text{
+                            padding: 0;
+                            margin-bottom: 30px;
+                        }
+                    }
+                    .row2{
+                        padding: 0;
+                    }
+                }
+            }
+            .map{
+                &-d{
+                    iframe{
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

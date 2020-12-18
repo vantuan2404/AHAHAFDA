@@ -1,0 +1,20 @@
+@font-face{
+    font-family:'Mon-R';
+    src: url('../font/Montserrat-Regular.woff') format('woff');
+    src: url('../font/Montserrat-Regular.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Mon-I';
+    src: url('../font/Montserrat-Italic.woff') format('woff');
+    src: url('../font/Montserrat-Italic.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Mon-B';
+    src: url('../font/Montserrat-Bold.woff') format('woff');
+    src: url('../font/Montserrat-Bold.woff2') format('woff2');
+    display: fallback;
+}

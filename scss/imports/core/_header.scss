@@ -1,0 +1,273 @@
+.header{
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100px;
+	.container{
+		max-width: $container;
+		padding: 0 15px;
+		margin: auto;
+		.header_detail{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 15px;
+			.brand{
+				cursor: pointer;
+			}
+			.navi-header{
+				nav{
+					ul{
+						list-style-type: none;
+						display: flex;
+						align-items: center;
+						li{
+							padding: 0 20px;
+							position: relative;
+							a{
+								@include text($fs-small,'Mon-B',22px,$black-cl,uppercase);
+								text-decoration: none;
+							}
+							&::after{
+								content: "";
+								width: 0%;
+								height: 2px;
+								background-color: $blue-cl;
+								display: block;
+								right: 0;
+								left: 0;
+								position: absolute;
+								margin: auto;
+								transition: width 0.4s;
+							}
+							&:hover{
+								&::after{
+									left: 0;
+									width: 100%;
+									transition: width 0.4s;
+								}
+							}
+						}
+					}
+				}
+			}
+			.contact_me{
+				position: relative;
+				a{
+					text-decoration: none;
+					.contact_me-btn{
+						border-radius: 5px;
+						background: $white-cl;
+						transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+						.d{
+							display: flex;
+							align-items: center;
+							padding: 20px 30px;
+							p{
+								@include text($fs-small,'Mon-B',0px,$black-cl,uppercase);
+								padding: 0 10px;				
+							}
+							img{
+								position: relative;
+								transform: translateX(-5px);
+								transition: all 0.6s;
+							}
+						}
+						&:hover{
+							transition: all 0.6s;
+							.d{
+								img{
+									transform: translateX(5px);
+									transition: all 0.6s;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.menu{
+	position: absolute;
+	z-index: 100;
+	background: $white-cl;
+	width: 100%;
+	height: 65px;
+	display: none;
+	overflow: hidden;
+	&-top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px;
+		border: 1px solid $grey-cl;
+		height: 65px;
+		.brand{
+			img{
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+		.hambuger{
+			cursor: pointer;
+			.d{
+				padding:15px 10px;
+				span{
+					content: "";
+					width: 30px;
+					height: 2px;
+					background: $grey-cl;
+					display: block;
+				}
+				.line-2{
+					margin: 5px 0;
+				}
+				.line-1{
+					transition: transform 0.4s;
+				}
+				.line-3{
+					position: relative;
+					top: -1px;
+					transition: transform 0.4s;
+				}
+			}
+			.activebtn{
+				.line-1{
+					transform: rotate(45deg);
+					transition: transform 0.4s;
+				}
+				.line-2{
+					display: none;
+				}
+				.line-3{
+					transform: rotate(-45deg);
+					transition: transform 0.4s;
+				}
+			}
+		}
+	}
+	&-nav{
+		width: 100%;
+		position: relative;
+		//padding-top: 30px;
+		right: -100%;
+		transition: right 0.7s cubic-bezier(0.81, 0.2, 0.32, 0.93);
+		nav{
+			ul{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				li{
+					padding: 15px 0;
+					transition: opacity 0.4s;
+					position: relative;
+					a{
+						@include text(25px,'Mon-B',26px,$blue-cl,uppercase);
+						letter-spacing: 1px;
+						font-weight: bold;
+					}
+					&::after{
+						content: "";
+						width: 0%;
+						height: 2px;
+						//left: 0;
+						right: 0;
+						bottom: 0;
+						//margin: auto;
+						background-color: $blue-cl;
+						display: block;
+						position: absolute;
+						transition: width 0.4s;
+					}
+					&:hover{
+						&::after{
+							left: 0;
+							width: 100%;
+							transition: width 0.4s;
+						}
+					}
+				}
+				.grey{
+					opacity: 0.3;
+					transition: opacity 0.4s;
+				}
+			}
+			.icon{
+				display: flex;
+				//flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				margin-top: 40px;
+				li{
+					padding:15px 5px;
+					&::after{
+						background-color: $grey-cl;
+					}
+					a{
+						@include text(15px,'Mon-R',16px,$grey-cl,none);
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}	
+}
+.active{
+	position: fixed;
+	height: 100vh;
+	.menu-nav{
+		right: 0%;
+		transition: right 0.7s cubic-bezier(0.81, 0.2, 0.32, 0.93);
+	}
+}
+
+@include desktop{
+	.header{
+		.container{
+			.header_detail{
+				.contact_me{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@include tablet{
+	.header{
+		.container{
+			.header_detail{
+				.navi-header{
+					nav{
+						ul{
+							li{
+								padding:0 0 0 10px;
+							}
+						}
+					}
+				}
+				.contact_me{
+					display: none;
+				}
+			}
+		}
+	}
+}
+@include mobile{
+	.header{
+		display: none;
+	}
+	.menu{
+		display: block;
+		position: fixed;
+		&-top{
+			.brand{
+				img{
+					width: 80%;
+				}
+			}
+		}
+	}
+}

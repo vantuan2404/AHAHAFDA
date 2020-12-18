@@ -1,0 +1,379 @@
+.shopdetailpage{
+    .banner{
+        background: url(./../img/inventory/banner.jpg);
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        .caption{
+            @include mid();
+            text-align: center;
+            h1{
+                @include text($fs-main,'Mon-B',85px,$white-cl,none);
+            }
+            p{
+                @include text(20px,'Mon-R',85px,$white-cl,none);
+                    font-weight: 700;
+                a{
+                    @include text(20px,'Mon-R',25px,$white-cl,none);
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: inline-block;
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 2px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        display: block;
+                        background-color: $white-cl;
+                        transition: width 0.6s;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            transition: width 0.6s;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    .container{
+        .row_main{
+            margin-top: 120px;
+            margin-bottom: 50px;
+            &-img{
+                padding-right:15px;
+                .row_big{
+                    height: 333px;
+                    &-img{
+                        height: 333px;
+                        max-height: 333px;
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                    
+                }
+                .row_small{
+                    margin-top: 10px;
+                    &-item{
+                        height: 100px;
+                        .item-img{
+                            height: 100px;
+                            padding: 0 5px;
+                            img{
+                                width: 100%;
+                                max-width: 100%;
+                                border: 2px solid $white-cl;
+                                transition: border .4s;
+                            }
+                            &:hover{
+                                img{
+                                    border: 2px solid $blue-cl;
+                                    transition: border .4s;
+                                }
+                            }
+                        }
+                    }
+                    .carousel-cell::before{
+                        display: block;
+                    }
+                }
+            }
+            &-des{
+                padding-left: 15px;
+                h3{
+                    @include text(42px,'Mon-B',56px,$black-cl,none);
+                    padding-bottom: 10px;
+                }
+                h6{
+                    @include text(26px,'Mon-R',56px,$grey-cl,none);
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                    p{
+                        display: inline-block;
+                        color: $black-cl;
+                    }
+                }
+                .spc{
+                    @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                }
+                .btn{
+                    padding-top: 20px;
+                    padding-bottom: 40px;
+                    &_1{    
+                        display: inline-block;
+                        border-radius: 5px;                   
+                        border: 1px solid $grey-cl;
+                        p{
+                            padding: 10px 20px;
+                            color: $grey-cl;
+                        }
+                    }
+                    &_card{
+                        background: $blue-cl;
+                        border-radius: 5px;
+                        display: inline-block;
+                        margin-left: 10px;
+                        &-d{
+                            padding: 5px 20px;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            p{
+                                @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                padding-right: 5px;
+                            }
+                            img{
+                                transition: transform .4s;
+                            }
+                            &:hover{
+                                img{
+                                    transform: translateX(10px);
+                                    transition: transform .4s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .line{
+            width: 100%;
+            height: 1px;
+            background: #e5e5e5;
+            display: block;
+            margin: 80px 0;
+        }
+        .row_tab{
+            &-btn{
+                margin-bottom: 35px;
+                .btn_des, .btn_rev{
+                    background: $blue-cl;
+                    border-radius: 5px;
+                    display: inline-block;
+                    transition: all .6s;
+                    &-d{
+                        padding: 5px 20px;
+                        transition: all .6s;
+                        cursor: pointer;
+                        p{
+                            @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                        }
+                       
+                    }
+                    &:hover{
+                        background: #888888;
+                        transition: all .6s;
+                    }
+                }
+                .btn_rev{
+                    background: $black-cl;
+                    margin-left: 10px;
+                    &-d{
+                        padding: 5px 30px;
+                    }
+                }
+            }
+            &-text{
+                @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+            }
+        }
+        .row_relate{
+            margin-bottom: 100px;
+            &-caption{
+                padding-bottom:60px;
+                position: relative;
+                .caption{
+                    h4{
+                        @include text(30px,'Mon-B',55px,$black-cl,none);
+                    }
+                }
+                .arrow{
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    display: inline-flex;
+                    align-items: center;
+                    &_prev, &_next{
+                        border-radius: 50%;
+                        background: $white-cl;
+                        -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                        -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                        box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                        cursor: pointer;
+                        &-d{
+                            padding: 15px;
+                            .rotate{
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    &_prev{
+                        margin-right: 20px;
+                    }
+                    &_next{
+                        
+                        background: $blue-cl;
+                    }
+                }
+            }
+            .product{
+                .row-product{
+                    .product_list{
+                        height: 607px;
+                        max-height: 607px;
+                        .carousel-cell::after{
+                            display: block;
+                        }
+                        &-item{
+                            height: 607px;
+                            max-height: 607px;
+                            padding: 0 10px;
+                            margin-bottom: 40px;
+                            .card{
+                                -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.35);
+                                &-img{
+                                    position: relative;
+                                    overflow: hidden;
+                                    max-height: 317px;
+                                    img{
+                                        width: 100%;
+                                        max-width: 100%;
+                                    }
+                                    .sca{
+                                        transition: transform .6s;
+                                    }
+                                    .sale{
+                                        position: absolute;
+                                        top: 0;
+                                        left:0;
+                                        padding-left: 23px;
+                                        padding-top: 23px;
+                                    }
+                                    &:hover{
+                                        .sca{
+                                            transform: scale(1.2);
+                                            transition: transform .6s;
+                                        }
+                                    }
+                                }
+                                &_d{
+                                    padding: 35px;
+                                    &-des{
+                                        padding: 20px 0 25px 0;
+                                        h6{
+                                            @include text(22px,'Mon-R',35px,$black-cl,uppercase);
+                                            p{
+                                                display: inline-block;
+                                                color: $grey-cl;
+                                                padding-right: 5px;
+                                                text-decoration: line-through;
+                                            }
+                                        }
+                                        h4{
+                                            @include text(22px,'Mon-B',35px,$black-cl,none);
+                                        }
+                                    }
+                                    &-btn{
+                                        display: inline-block;
+                                        border-radius: 5px;
+                                        background: $blue-cl;
+                                        &-d{
+                                            display: inline-flex;
+                                            align-items: center;
+                                            padding: 10px 32px;
+                                            cursor: pointer;
+                                            p{
+                                                @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                                padding-right: 5px;
+                                            }
+                                            img{
+                                                transition: transform 0.4s;
+                                            }
+                                            &:hover{
+                                                img{
+                                                    transform: translateX(10px);
+                                                    transition: transform 0.4s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include desktop{
+    .shopdetailpage{
+        .banner{
+            .caption{
+                top: 30%;
+            }
+        }
+    }
+}
+@include tablet{
+    .shopdetailpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+        .container{
+        }
+    }
+}
+@include mobile{
+    .shopdetailpage{
+        .banner{
+            margin-top: 0;
+            .caption{
+                top: 40%;
+                h1{
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+                p{
+                    line-height: 55px;
+                    a{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .container{
+            padding:0 5px;
+            .row_main{
+                margin-top: 70px;
+                &-img{
+                    padding: 0;
+                }
+                &-des{
+                    margin-top: 30px;
+                    padding: 0;
+                }
+            }
+            .row_relate{
+                &-caption{
+                    .arrow{
+                        top: auto;
+                    }
+                }
+                .product{
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

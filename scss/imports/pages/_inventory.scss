@@ -1,0 +1,550 @@
+.inventpage{
+    width: 100%;
+    height: 100%;
+    .banner{
+        background: url(./../img/inventory/banner.jpg);
+        margin-top: 90px;
+        width: 100%;
+        height: 500px;
+        .caption{
+            @include mid();
+            text-align: center;
+            h1{
+                @include text($fs-main,'Mon-B',85px,$white-cl,none);
+            }
+            p{
+                @include text(20px,'Mon-R',85px,$white-cl,none);
+                    font-weight: 700;
+                a{
+                    @include text(20px,'Mon-R',25px,$white-cl,none);
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: inline-block;
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 2px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        display: block;
+                        background-color: $white-cl;
+                        transition: width 0.6s;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            transition: width 0.6s;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    .container{
+        .sell{
+            margin: 125px 0;
+            .row-sell{
+                .col-aside{
+                    padding: 0 10px;
+                    .card_vehicle{
+                        margin-bottom: 25px;
+                        &-top{
+                            background: url(./../img/inventory/Overly-left-1.jpg);
+                            p{
+                                @include text(35px,'Mon-B',32px,$white-cl,none);
+                                padding: 45px 36px;
+                            }
+                        }
+                        &-body{
+                            background: #f1f8ff;
+                            nav{
+                                padding-bottom: 45px;
+                                ul{
+                                    li{
+                                        cursor: pointer;
+                                        border-bottom: 1px solid $grey-cl;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        padding-top: 30px;
+                                        margin: 0 30px;
+                                        position: relative;
+                                        p{
+                                            @include text(16px,'Mon-R',32px,$grey-cl,none);
+                                            font-weight: 700;
+                                        }
+                                        img{
+                                            transition: transform 0.4s;
+                                        }
+                                        
+                                    }
+                                    .quay{
+                                        img{
+                                            transform: rotate(180deg);
+                                            transition: transform 0.4s;
+                                        }
+                                    }
+                                    .ul_list{
+                                        width: 100%;
+                                        height: 100%;
+                                        display: none;
+                                        li{
+                                            transition: all 0.4s;
+                                            font-size: 15px;
+                                            &:hover{
+                                                background: #e2edf9;
+                                                transition: all 0.4s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .card_price{
+                        margin-bottom: 25px;
+                        &-top{
+                            background: url(./../img/inventory/Overly-left-2.jpg);
+                            p{
+                                @include text(35px,'Mon-B',32px,$white-cl,none);
+                                padding: 45px;
+                            }
+                        }
+                        &-body{
+                            background: #f1f8ff;
+                            .progge{
+                                padding-top: 40px;
+                                margin: 0 30px;
+                                p{
+                                    display: flex;
+                                    @include text(16px,'Mon-R',32px,$grey-cl,none);
+                                        font-weight: 700;
+                                    .price-first, .price-last{
+                                        @include text(16px,'Mon-R',32px,$grey-cl,none);
+                                        font-weight: 700;
+                                    }
+                                }
+                                input{
+                                    width: 100%;
+                                    height: 2px;
+                                }
+                            }
+                            .toggle{
+                                nav{
+                                    padding-bottom: 45px;
+                                    ul{
+                                        li{
+                                            cursor: pointer;
+                                            border-bottom: 1px solid $grey-cl;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            padding-top: 30px;
+                                            margin: 0 30px;
+                                            p{
+                                                @include text(16px,'Mon-R',32px,$grey-cl,none);
+                                                font-weight: 700;
+                                            }
+                                        }
+                                        .quay{
+                                            img{
+                                                transform: rotate(180deg);
+                                                transition: transform 0.4s;
+                                            }
+                                        }
+                                        .ul_list{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: none;
+                                            li{
+                                                transition: all 0.4s;
+                                                font-size: 15px;
+                                                &:hover{
+                                                    background: #e2edf9;
+                                                    transition: all 0.4s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .btn-price{
+                                margin-top: 35px;
+                                @include mid();
+                                display: inline-block;
+                                background: $blue-cl;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                position: relative;
+                                &-d{
+                                   padding: 25px 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    p{
+                                        @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                        padding: 0 10px;
+                                    }
+                                    img{
+                                        position: relative;
+                                        transform: translateX(-5px);
+                                        transition: all 0.6s;
+                                    }
+                                    &:hover{
+                                        transition: all 0.6s;
+                                        img{
+                                            transform: translateX(5px);
+                                            transition: all 0.6s;
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    .card_color{
+                        margin-bottom: 25px;
+                        &-top{
+                            background: url(./../img/inventory/Overly-left-3.jpg);
+                            p{
+                                @include text(35px,'Mon-B',32px,$white-cl,none);
+                                padding: 45px;
+                            }
+                        }
+                        &-body{
+                            background: #f1f8ff;
+                            ul{
+                                display: flex;
+                                padding:15px 30px;
+                                li{
+                                    padding-right:20px;
+                                    .c-1, .c-2, .c-3, .c-4, .c-5, .c-6 {
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 50%;
+                                        display:inline-block;
+                                        background-color:#ff0000;
+                                        cursor: pointer;
+                                    }
+                                    .c-2{
+                                        background-color:#0988ff;
+                                    }
+                                    .c-3{
+                                        background-color:#ff00ff;
+                                    }
+                                    .c-4{
+                                        background-color:#1b1464;
+                                    }
+                                    .c-5{
+                                        background-color: #111111;
+                                    }
+                                    .c-6{
+                                        background-color: #c69c6d;
+                                    }
+                                }
+                                    
+                                
+                            }
+                        }
+                    }
+                }
+                .col-article{
+                    padding: 0 10px;
+                    .row-top{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 50px;
+                        .col-left{
+                            p{
+                                @include text(18px,'Mon-R',32px,$black-cl,none);
+                                span{
+                                    color: $blue-cl;
+                                }
+                            }
+                        }
+                        .col-right{
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            .btn-sort{
+                                display: inline-block;
+                                border-radius: 5px;
+                                border: 1px solid $blue-cl;
+                                cursor: pointer;
+                                transition: background 0.6s;
+                                &-d{
+                                    padding: 9px 25px;
+                                    display: flex;
+                                    align-items: center;
+                                    p{
+                                        padding-right:10px;
+                                        @include text(14px,'Mon-B',28px,$black-cl,none);
+                                    }
+                                }
+                                &:hover{
+                                    background: $blue-cl;
+                                    transition: background 0.6s;
+                                }
+                            }
+                            .btn-grid, .btn-colum{
+                                display: inline-block;
+                                border: 1px solid $blue-cl;
+                                border-radius: 5px;
+                                margin-left: 15px;
+                                transition: background 0.6s;
+                                cursor: pointer;
+                                img{
+                                    padding: 12px 25px;
+                                    width: 72px;
+                                    height: 45px;
+                                }
+                                &:hover{
+                                    background: $blue-cl;
+                                    transition: background 0.6s;
+                                }
+                            }
+                        }
+                    }
+                    .row_product{
+                        transition: all 0.6s;
+                        &-item{
+                            margin-bottom: 25px;
+                            .card{
+                                background: #f1f8ff;
+                                margin: 0 5px;
+                                a{
+                                    .img{
+                                        position: relative;
+                                        overflow: hidden;
+                                        transition: opacity 0.6s;
+                                        &::before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 99%;
+                                            background: rgba($color: #000000, $alpha: 0.7);
+                                            z-index: 5;
+                                            opacity: 0;
+                                            transition: opacity 0.6s;
+                                        }
+                                        p{
+                                            opacity: 0;
+                                            opacity: 0;
+                                            z-index: 6;
+                                            @include mid();
+                                            @include text($fs-p,'Mon-B',28px,$white-cl,uppercase);
+                                            transition: opacity 0.6s;
+                                        }
+                                        .spc{
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            width: 85px;
+                                            height: 60px;
+                                            z-index: 6;
+                                            opacity: 0;
+                                            transition: opacity 0.6s;
+                                        }
+                                        img{
+                                            width: 100%;
+                                            max-width: 100%;
+                                        }
+                                        &:hover{
+                                            transition: opacity 0.6s;
+                                            .spc{
+                                                opacity: 1;
+                                                transition: opacity 0.6s;
+                                            }
+                                            &::before{
+                                                opacity: 1;
+                                                transition: opacity 0.6s;
+                                            }
+                                            p{
+                                                opacity: 1;
+                                                transition: opacity 0.6s;
+                                            }
+                                        }
+                                    }
+                                    .des{
+                                        padding: 0 30px;
+                                        margin: 40px 0 20px 0;
+                                        h3{
+                                            @include text(22px,'Mon-B',28px,$black-cl,none);
+                                        }
+                                        p{
+                                            @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                        }
+                                    }
+                                    .icon{
+                                        padding: 0 30px 20px 30px;
+                                        .col-icon{
+                                            .hopso, .car{
+                                                display: flex;
+                                                align-items: center;
+                                                img{
+                                                    width: 25px;
+                                                    height: 22px;
+                                                }
+                                                p{
+                                                    padding-left: 12px;
+                                                    @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                                }
+                                            }
+                                            .hopso{
+                                                padding-bottom: 10px;
+                                            }
+                                            .car{
+                                                padding-bottom: 10px;
+                                                img{
+                                                    width: 28px;
+                                                }
+                                            }
+                                            .xang, .gia{
+                                                display: flex;
+                                                align-items: center;
+                                                p{
+                                                    padding-left: 12px;
+                                                    @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .product-list{
+                        display: flex;
+                        flex-direction: column;
+                        transition: all 0.6s;
+                    }
+                    .row_tab{
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 50px;
+                        nav{
+                            ul{
+                                list-style-type: none;
+                                display: flex;
+                                align-items: center;
+                                li{
+                                    margin: 0 8px;
+                                    display: inline-block;
+                                    border: 1px solid $grey-cl;
+                                    border-radius: 50%;
+                                    transition: all 0.4s;
+                                    cursor: pointer;
+                                    img{
+                                        padding: 20px 24px;
+                                        
+                                    }
+                                    p{
+                                        padding: 11px 18px;
+                                        @include text(16px,'Mon-B',32px,$grey-cl,uppercase);
+                                    }
+                                    &:hover{
+                                        background: $blue-cl;
+                                        transition: all 0.4s;
+                                        p{
+                                            color: $white-cl;
+                                        }
+                                    }
+                                }
+                                .active_tab{
+                                    background: $blue-cl;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include desktop{
+    .inventpage{
+        .banner{
+            .caption{
+                top: 30%;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .inventpage{
+        .banner{
+            .caption{
+                top: 35%;
+            }
+        }
+        .container{
+            .big-aside{
+                .row-2, .row-3{
+                    .specials-d, .caption-d{
+                        p{
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .row-3{
+
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .inventpage{
+        .banner{
+            margin-top: 0;
+            .caption{
+                top: 40%;
+                h1{
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+        }
+        .container{
+            padding: 0 5px;
+            .sell{
+                .row-sell{
+                    .col-aside, .col-article{
+                        padding: 0;
+                    }
+                    .col-article{
+                        .row_tab{
+                            nav{
+                                ul{
+                                    li{
+                                        p{
+                                            padding: 3px 12px;
+                                        }
+                                        img{
+                                            padding: 12px 17px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .row-top{
+                            flex-direction: column;
+                            .col-right{
+                                justify-content: center;
+                                .btn-sort{
+                                    &-d{
+                                        p{
+                                            padding-right: 20px;
+                                            line-height: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

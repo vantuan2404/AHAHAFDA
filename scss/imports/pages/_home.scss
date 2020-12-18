@@ -1,0 +1,632 @@
+.homepage{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    .wrapper{
+        .banner{
+            width: 100%;
+            height: 998px;
+            position: relative;
+            &-img{
+                overflow: hidden;
+                .main-img{
+                    width: 100%;
+                    max-width: 100%;
+                }
+                .spc-main{
+                    position: absolute;
+                    right: 0;
+                    z-index: 10;
+                    top: 26%;
+                    width: 800px;
+                    animation: bounce 5s infinite;
+                }
+                @keyframes bounce {
+                    0%{
+                        transform: translateX(0px);
+                        transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+                    }
+                    50%{
+                        transform: translateX(-150px);
+                        transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+                    }
+                    100%{
+                        transform: translateX(0px);
+                        transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+                    }
+                }
+            }
+            .slide{
+                @include mid();
+                left: 30%;
+                top: 48%;
+                z-index: 20;
+                &_arrow{
+                    display: inline-block;
+                    display: flex;
+                    &-prev, &-next{
+                        border-radius: 5px;
+                        transition: opacity 0.6s;
+                        cursor: pointer;
+                        p{
+                            @include text(14px,'Mon-B',10px,$white-cl,uppercase);
+                            padding: 10px 15px;
+                            color: #888888;
+                        }
+                        &:hover{
+                            opacity: .6;
+                            transition: opacity 0.6s;
+                        }
+                    }
+                    &-next{
+                        margin-left: 10px;
+                        background: $white-cl;
+                    }
+                    .bg{
+                        background: $red-cl;
+                        p{
+                            color: $white-cl;
+                        }
+                    }
+                }
+                &_caption1{
+                    display: none;
+                    position: relative;
+                    padding: 20px 0 30px 0;
+                    h1{
+                        @include text($fs-main,'Mon-B',85px,$black-cl,none);
+                        letter-spacing: 3px;
+                        padding-bottom: 20px;
+                        p{
+                            color: $blue-cl;
+                            display: inline-block;
+                        }
+                    }
+                    .p-small{
+                        @include text($fs-small,'Mon-R',32px,#888888,none);
+                        padding-top: 20px;
+                    }
+                }
+                .show{
+                    display: block;
+                }
+                &_btn{
+                    background: $blue-cl;
+                    display: inline-block;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    a{
+                        .slide_btn-d{
+                            display: flex;
+                            align-items: center;
+                            padding: 10px 20px;
+                            p{
+                                @include text($fs-small,'Mon-B',28px,$white-cl,uppercase);
+                            }
+                            img{
+                                padding-left: 10px;
+                                transform: translateX(-5px);
+                                transition: all 0.6s;
+                                position: relative;
+                            }
+                        }
+                    }
+                    &:hover{
+                        a{
+                            .slide_btn-d{
+                                img{
+                                    transform: translateX(5px);
+									transition: all 0.6s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .container{
+            .uliti{
+                margin-bottom: 100px;
+                .row-caption{
+                    padding-bottom: 40px;
+                    .col-caption{
+                        text-align: center;
+                        h2{
+                            @include text(55px,'Mon-B',28px,$black-cl,uppercase);
+                            padding-bottom: 16px;
+                            letter-spacing: 1px;
+                            p{
+                                display: inline-block;
+                                color: $blue-cl;
+                                font-family: 'Mon-B';
+                                font-style: italic;
+                            }
+                        }
+                        .spc{
+                            padding-top: 16px;
+                            @include text(14px,'Mon-R',28px,#888888,none);
+                        }
+                    }
+                }
+                .row-uliti{
+                    padding-top: 40px;
+                    .col_item{
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        padding:0 8px;
+                        &-brand{
+                            margin-bottom: 15px;
+                            display: inline-block;
+                            border-radius: 50%;
+                            background: #f1f8ff;
+                            position: relative;
+                            img{
+                                padding: 30px 22px;
+                            }
+                            .check{
+                                padding: 0;
+                                @include mid();
+                                top: 15%;
+                                left: 82%;
+                            }
+                        }
+                        &-des{
+                            text-align: center;
+                            margin: 20px 0 15px 0;
+                            h3{
+                                @include text(24px,'Mon-B',28px,$black-cl,none);
+                                padding-bottom: 10px;
+                            }
+                            p{
+                                @include text($fs-p,'Mon-R',26px,#888888,none);
+                                padding-top: 10px;
+                            }
+                        }
+                        &-btn{
+                            margin-top: 15px;
+                            a{
+                                display: flex;
+                                align-items: center;
+                                p{
+                                    @include text($fs-p,'Mon-B',32px,$black-cl,none);
+                                    padding-right:5px;
+                                    transition: transform 0.6s;
+                                }
+                                img{
+                                    position: relative;
+                                    transition: transform 0.6s;
+                                }
+                            }
+                            &:hover{
+                                a{
+                                    img{
+                                        transform: translateX(-80px);
+                                        transition: transform 0.3s;
+                                    }
+                                    p{
+                                        transform: translateX(20px);
+                                        transition: transform 0.3s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .intro{
+                position: relative;
+                margin: 100px 0;
+                .row-intro{
+                    .col-img{
+                        padding: 0 8px;
+                        .img{
+                            img{
+                                width: 100%;
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                    .col_intro-caption{
+                        padding: 0 8px;
+                        .des{
+                            margin-left: 30px;
+                            .spc2{
+                                @include text($fs-p,'Mon-B',15px,$blue-cl,uppercase);
+                                letter-spacing: 1px;
+                            }
+                            h2{
+                                @include text(55px,'Mon-B',85px,$black-cl,uppercase);
+                                padding: 5px 0 30px 0;
+                                .spc{
+                                    font-style: italic;
+                                    display: inline-block;
+                                    color: $blue-cl;
+                                }
+                            }
+                            .p-small{
+                                @include text($fs-p,'Mon-R',32px,#888888,none);
+                                padding-bottom: 50px;
+                            }
+                            .row-item{
+                                &-d{
+                                    display: flex;
+                                    align-items: center;
+                                    .text-small{
+                                        padding-left: 15px;
+                                        .p1{
+                                            @include text(30px,'Mon-B',40px,$black-cl,none);
+                                        }
+                                        .p2{
+                                            @include text($fs-p,'Mon-R',32px,#888888,none);
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            .dreamcar{
+                margin: 200px 0 150px 0;
+                .row-caption{
+                    text-align: center;
+                    margin-bottom: 50px;
+                    h2{
+                        @include text(55px,'Mon-B',28px,$black-cl,uppercase);
+                        padding-bottom: 16px;
+                        letter-spacing: 1px;
+                        p{
+                            display: inline-block;
+                            color: $blue-cl;
+                            font-family: 'Mon-B';
+                            font-style: italic;
+                        }
+                    }
+                    .spc{
+                        padding-top: 16px;
+                        @include text(14px,'Mon-R',28px,#888888,none);
+                    }
+                }
+                .row-product{
+                    margin-bottom: 50px;
+                    .product-item{
+                        padding: 0 10px;
+                        position: relative;                
+                       .card{
+                        -webkit-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.55);
+                        -moz-box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.55);
+                        box-shadow: 1px 6px 14px -3px rgba(0,0,0,0.55);
+                        transition: all 0.6s;
+                        .img{
+                            position: relative;
+                            img{
+                                width: 100%;
+                                max-width: 100%;
+                            }
+                            .btn-price{
+                                display: inline-block;
+                                background: $blue-cl;
+                                border-radius: 5px;
+                                position: absolute;
+                                bottom: -15px;
+                                right: 15px;
+                                z-index: 2;
+                                p{
+                                    @include text($fs-p,'Mon-B',28px,$white-cl,none);
+                                    padding: 3px 20px;
+                                }
+                            }
+                        }
+                        .des{
+                            padding: 0 10px;
+                            h4{
+                                @include text(20px,'Mon-B',28px,$black-cl,none);
+                                padding:25px 0 10px 0;
+                            }
+                            p{
+                                @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                padding-bottom: 10px;
+                            }
+                        }
+                        .btn{
+                            display: flex;
+                            align-items: center;
+                            padding: 0 10px 20px 10px;
+                            cursor: pointer;
+                            p{
+                                @include text($fs-p,'Mon-B',28px,$grey-cl,uppercase);
+                                padding-right:5px;
+                            }
+                            img{
+                                position: relative;
+                                transition: transform 0.4s;
+                            }
+                            &:hover{
+                                img{
+                                    transform: translateX(10px);
+                                    transition: transform 0.4s;
+                                }
+                            }
+                        }
+                        &:hover{
+                            transform: translateY(-10px);
+                            transition: transform 0.6s;
+                        }
+                       }
+                    }
+                }
+            }
+        }
+        .team{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('../../../img/Home/bg-car-new.jpg');
+            margin-bottom: 150px;
+            .container{
+                position: relative;
+                .row-caption{
+                    margin-bottom: 60px;
+                    margin-top: 120px;
+                    h2{
+                        @include text(55px,'Mon-B',28px,$white-cl,uppercase);
+                        padding-bottom: 16px;
+                        letter-spacing: 1px;
+                        p{
+                            display: inline-block;
+                            color: $blue-cl;
+                            font-family: 'Mon-B';
+                            font-style: italic;
+                        }
+                    }
+                    .spc{
+                        padding-top: 16px;
+                        @include text(14px,'Mon-R',28px,#888888,none);
+                    }
+                    .btn_slide{
+                        display: inline-block;
+                        position: absolute;
+                        right: 15px;
+                        &-arrow{
+                            display: flex;
+                            align-items: center;
+                            .prev{
+                                border-radius: 50%;
+                                background: $blue-cl;
+                                margin-right: 10px;
+                                cursor: pointer;
+                                img{
+                                    padding: 15px;
+                                    transform: rotate(180deg);
+                                }
+                            }
+                            .next{
+                                border-radius: 50%;
+                                background: #ff9600;
+                                cursor: pointer;
+                                img{
+                                    padding: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .row-laster{
+                    margin-bottom: 120px;    
+                    .laster-wrap{
+                        width: 100%;
+                        height:475px;
+                        .col-item{    
+                            padding:0 10px;
+                           &-d{
+                            background: $white-cl;
+                            padding: 0 10px;
+                            border-right: 1px solid $grey-cl;
+                            padding: 30px 20px;    
+                            .row-d{
+                                .calendar, .cmt{
+                                    display: flex;
+                                    align-items: center;
+                                    p{
+                                        @include text($fs-p,'Mon-R',26px,$grey-cl,none);
+                                        padding-left: 10px;
+                                    }
+                                }
+                            }
+                            .des{
+                                padding: 10px 0;
+                                h3{
+                                    @include text(24px,'Mon-B',32px,$black-cl,none);
+                                    padding-bottom: 15px;
+                                }
+                                .info{
+                                    display: flex;
+                                    padding: 20px 0 5px 0;
+                                    p{
+                                        @include text(18px,'Mon-B',32px,$blue-cl,none);
+                                    }
+                                    img{
+                                        padding-right: 20px;
+                                        width: 60px;
+                                        height: 35px;
+                                    }
+                                }
+                                .text-g{
+                                    @include text($fs-p,'Mon-R',28px,$grey-cl,none);
+                                    padding: 10px 0 20px 0;
+                                }
+                            }
+                            .btn{
+                                display: inline-block;
+                                background: $blue-cl;
+                                border-radius: 5px;
+                                a{
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 7px 20px;
+                                    p{
+                                        @include text($fs-p,'Mon-B',32px,$white-cl,uppercase);
+                                        padding-right: 5px;
+                                    }
+                                    img{
+                                        position: relative;
+                                        transition: transform 0.4s;
+                                    }
+                                }
+                                &:hover{
+                                    a{
+                                        img{
+                                            transform: translateX(10px);
+                                            transition: transform 0.4s;
+                                        }
+                                    }
+                                }
+                            }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@include tablet{
+    .homepage{
+        .wrapper{
+            .banner{
+                .slide{
+                    left: 40%;
+                }
+            }
+            .container{
+                .dreamcar{
+                    .row-product{
+                        margin-bottom: 30px;
+                        .product-item{
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .homepage{
+       .wrapper{
+        .banner{
+            padding-top: 65px;
+            height: 830px;
+            &-img{
+                .spc-main{
+                    display: block;
+                    width:220px;
+                    top: 10%;
+                    left:20%;
+                    animation: none;
+                }
+            }
+            .slide{
+                //width: 500px;
+                left: 50%;
+                top: 60%;
+                &_caption1{
+                    h1{
+                        font-size: 60px;
+                    }
+                }
+                &_arrow{
+                    &-prev, &-next{
+                        p{
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }   
+        }
+        .container{
+            padding: 0 5px;
+            .uliti{
+                margin-top: 50px;
+                .row-caption{
+                    .col-caption{
+                        h2{
+                            font-size: 33px;
+                        }
+                    }
+                }
+                .row-uliti{
+                    .col_item{
+                        padding-bottom: 60px;
+                    }
+                }
+            }
+            .intro{
+                .row-intro{
+                    .col_intro-caption{
+                        //padding-top: 30px;
+                        .des{
+                            margin-left: 0;
+                            h2{
+                                font-size: 33px;
+                                padding: 0;
+                                line-height: 50px;
+                            }
+                            .row-item{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                padding-left: 50px;
+                                padding-top: 0;
+                            }
+                            .row-item-d{
+                                padding-bottom: 20px;
+                                padding-top: 0;
+                                .text-small{
+                                    padding-left: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .dreamcar{
+                margin:100px 0;
+                .row-caption{
+                    h2{
+                        font-size: 33px;
+                    }
+                }
+                .row-product{
+                    .product-item{
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        .team{
+            .container{
+                .row-caption{
+                    margin-top: 100px;
+                    h2{
+                        font-size: 33px;
+                    }
+                }
+                .row-laster{
+                    //height: 460px;
+                   .laster-wrap{
+                    .col-item{
+                        margin-bottom: 30px;
+                    }
+                   }
+                }
+            }
+        }
+       }
+    }
+}
